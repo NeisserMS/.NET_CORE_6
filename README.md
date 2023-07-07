@@ -71,7 +71,22 @@ La naturaleza del error es determinada por el código de status. Existen 5 categ
 - Error del Cliente: Indica que el cliente ha cometido un error al momento de hacer la petición.
 - Error del servidor: Este indica que el servidor ha fallado en poder satisfacer la petición.Sin embargo el error ha ocurrido por un problema en el servidor, que para nada es culpa del usuario.
 > Los errores 400 son culpa del usuario y los 500 son culpa del developer.
-> 
 
+### ¿Cuando usar .NET CORE?
+- Vas a crear microservicios (pues las apps de .NET son de alto rendimiento).
+- Vas a utilizar contenedores Docker.
+- Necesitas capacidad multi-plataformas.
+- Quieres utilizar un framework moderno de desarrollo.
+- Necesitas una linea de comandos para automatizar procesos relacionados con el desarrollo, prueba o publicación de tus aplicaciones.
 
+### ¿Cuando utilizar .NET Framework?
+- Utilizarás una tecnología la cual no es soportada por .NET Core, como WFC o webforms.
+- Necesitas utilizar APIs específicos de Windows. Dado que .NET Core es multiplataforma, este no asume el sistema operativo donde se va a ejecutar.
+- Existen funcionalidades de .NET que aún no están disponibles en .NET Core.
 
+### Comandos
+
+Para ver las plantillas con la que podemos crear un proyecto:
+```
+dotnet new --list
+```
