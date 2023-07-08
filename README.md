@@ -86,7 +86,34 @@ La naturaleza del error es determinada por el código de status. Existen 5 categ
 
 ### Comandos
 
-Para ver las plantillas con la que podemos crear un proyecto:
+Para ver las plantillas con la que podemos crear un proyecto.
 ```
 dotnet new --list
 ```
+Para cambiar de versión:
+```
+dotnet new globaljson --sdk-version 5.x.x --force
+```
+Listar los SDKS:
+```
+dotnet --list-sdks
+```
+### Swagger
+Es una libreria de JavaScript. Se puede habilitar e integrar fácilmente en la app para mostrar y documentar las APIs de forma automática.
+### Debuger
+Marca el endPoint
+Presionar F5
+presionar F10 para avanzar
+Volver a presionar F5 para continuar.
+**Nota: Sin debuger seria CTRL + F5**
+
+### ASP.NET CORE 6
+Desde la versión 6 ya se elimina la clase startup. Aquí anteriormente se configuraba los servicios y el middleware de la aplicación.
+
+### Cambiando de Versión
+Dentro de la carpeta usuarios hay un archivo global.json, ahi indicar que version de dotnet
+se quiere utilizar. Esta ya debe estar previamente descargada e instalada.
+### Desactivando los tipos de referencia no Nulos
+Abrir el csproj y encontraremos la etiqueta <Nullable> enable <Nullable>, lo cambiamos por **disable**. Sino hacemos esto vamos a tener errores al momento de crear autores o libros en el desarrollo de la web API.
+
+

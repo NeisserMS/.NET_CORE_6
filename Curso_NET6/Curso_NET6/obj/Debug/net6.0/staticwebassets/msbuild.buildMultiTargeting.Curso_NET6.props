@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Curso_NET6.props" />
-</Project>
