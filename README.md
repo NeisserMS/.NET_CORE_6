@@ -116,4 +116,15 @@ se quiere utilizar. Esta ya debe estar previamente descargada e instalada.
 ### Desactivando los tipos de referencia no Nulos
 Abrir el csproj y encontraremos la etiqueta <Nullable> enable <Nullable>, lo cambiamos por **disable**. Sino hacemos esto vamos a tener errores al momento de crear autores o libros en el desarrollo de la web API.
 
-
+### Entity Framework Core
+A través del dbContext es dodne configuramos EFC en nuestra app, configurar el conexión String (representa la BD que vamos a utilizar), reglas de validación etc.
+#### Comandos:
+Para hacer una migración y crear tu tabla en sql server:
+Herramientas > Administrador de paquetes Nuget > Consola.
+```
+Add-Migration Inicial  
+```
+##### Mismos comandos con Dotnet CLI:
+```
+dotnet ef migrations add Inicial 
+```
