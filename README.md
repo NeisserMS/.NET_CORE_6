@@ -117,14 +117,39 @@ se quiere utilizar. Esta ya debe estar previamente descargada e instalada.
 Abrir el csproj y encontraremos la etiqueta <Nullable> enable <Nullable>, lo cambiamos por **disable**. Sino hacemos esto vamos a tener errores al momento de crear autores o libros en el desarrollo de la web API.
 
 ### Entity Framework Core
-A través del dbContext es dodne configuramos EFC en nuestra app, configurar el conexión String (representa la BD que vamos a utilizar), reglas de validación etc.
+A través del dbContext es dodne configuramos EFC en nuestra app, configurar el conexión String (representa la BD que vamos a utilizar), reglas de validación etc, es una manera tbn de crear una bd a través de código de código C#.
+Instalar los paquetes para poder hacer migraciones ,etc, de manera gráfica:
+> Microsoft.EntityFrameworkCore.sqlServer
+> Microsoft.EntityFrameworkCore.tools
+![DbdContext](img/ApplicationDvContext.png)
+
+Ahora toca configurar el conectionString:
+![dbConecction](img/conecction.png)
+con Security se indica que vamos a utilizar las credenciales de windows para autenticarnos.
+Initial Catalog es el nombre de la BD y Data Source es el servidor. 
+Ahora para terminar de consigurar se debe de hacer en los servicios de startup:
+![startup](img/startup.png)
+
 #### Comandos:
+###### Package Management Console: Herramientas > Administrador de paquetes Nuget > Consola.
 Para hacer una migración y crear tu tabla en sql server:
-Herramientas > Administrador de paquetes Nuget > Consola.
 ```
 Add-Migration Inicial  
+```
+Toma las migraciones pendientes y lo empuja a la BD. Si la BD no existe, lo crea.
+```
+Update-Database  
 ```
 ##### Mismos comandos con Dotnet CLI:
 ```
 dotnet ef migrations add Inicial 
 ```
+Toma las migraciones pendientes y lo empuja a la BD. Si la BD no existe, lo crea.
+```
+dotnet ef database update 
+```
+![Nuget Console](img/console.png)
+
+Para visualizar la BD ir a: View > SQL Server Onject Explorer
+Salida: Se creó la BD y dentro de ella la tabla.
+![BD](img/2.png)
