@@ -21,7 +21,7 @@ namespace WebAPIAutores.Controllers
         [HttpGet] /* Se define el método */
         public async Task<ActionResult<List<Autor>>> Get()
         {
-            return await context.Autores.ToListAsync();
+            return await context.Autores.Include(x => x.libros).ToListAsync();
         }
 
         [HttpPost]
